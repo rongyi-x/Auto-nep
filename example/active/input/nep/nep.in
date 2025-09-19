@@ -1,0 +1,5 @@
+type 3 C N Ga
+cutoff 8 5
+zbl 2
+lambda_1 0
+generation 20000

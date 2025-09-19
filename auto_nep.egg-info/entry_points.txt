@@ -1,0 +1,2 @@
+[console_scripts]
+auto-nep = auto_nep.cli.cli:main

@@ -1,0 +1,40 @@
+# The task_type can be abacus or active
+task_type: active
+
+# Element type
+element_type:
+    - C
+    - N
+    - Ga
+
+abacus:
+    pp_path: ./pp_basis/
+    basis_path: ./pp_basis/
+    abacus_input_path: ./input/abacus/INPUT
+    abacus_pbs_path: ./input/abacus/abacus.pbs
+    # If there is an existing dataset, perform the calculation
+    dataset_path: ./abacus-dataset
+    # If warn_times is less than 1 uncalculated tasks will not be awaited for calculation
+    warn_times: 2
+
+vasp:
+    # script_path pbs file and INCAR
+    script_path: ./scripts
+
+active:
+    nep_path: nep
+    gpumd_path: gpumd
+    gpumd_pbs_path: ./input/gpumd/gpumd.pbs
+    nep_pbs_path: ./input/gpumd/nep.pbs
+    nep_in_path: ./input/nep/nep.in
+    init_nep_txt: ./input/nep/nep.txt
+    init_train_xyz: ./input/nep/train.xyz
+    restart: True
+    # If restart is True, need nep.restart
+    nep_restart: ./input/nep/nep.restart
+    run_in_path: ./input/gpumd/run.in
+    model_dir: ./input/model/
+    max_iterations: 20
+    max_structures_per_iteration: 80
+    max_structures_per_model: 20
+    shift_energy: True

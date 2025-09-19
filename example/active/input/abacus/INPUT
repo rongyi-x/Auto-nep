@@ -1,0 +1,22 @@
+INPUT_PARAMETERS
+suffix                        GaNC
+
+basis_type                 lcao
+calculation                 scf
+
+pseudo_dir                 /home/user/rongyi/abacus/APNS-PPORBs/apns-pseudopotentials-v1
+orbital_dir                 /home/user/rongyi/abacus/APNS-PPORBs/apns-orbitals-efficiency-v1
+
+ecutwfc                     100
+kspacing                    0.2
+scf_thr                       1e-5
+
+smearing_method gaussian
+smearing_sigma    0.0037 # vasp 0.05eV
+
+mixing_beta       0.4
+mixing_ndim      20
+
+cal_stress                  1
+cal_force                   1
+out_chg                     -1

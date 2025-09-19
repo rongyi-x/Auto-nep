@@ -1,0 +1,13 @@
+#!/bin/bash -l
+#PBS -N GPUMD
+#PBS -l nodes=1:gpus=1
+#PBS -j oe
+#PBS -S /bin/bash
+#PBS -l walltime=1000:00:00
+
+cd $PBS_O_WORKDIR
+NPROCS=`cat $PBS_NODEFILE| wc -l`
+gpumd > out.log
+
+cat>DONE<<EOF
+DONE!

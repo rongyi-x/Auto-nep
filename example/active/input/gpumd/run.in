@@ -1,0 +1,11 @@
+potential   nep.txt
+velocity    50
+time_step   1
+
+compute_extrapolation asi_file ../active_set.asi check_interval 10 gamma_low 5 gamma_high 10
+ensemble npt_mttk iso 0 0 temp 50 1000
+run         10000000
+
+compute_extrapolation asi_file ../active_set.asi check_interval 10 gamma_low 5 gamma_high 10
+ensemble npt_mttk iso 0 0 temp 1000 50
+run         10000000
